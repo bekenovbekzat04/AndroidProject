@@ -47,7 +47,7 @@ interface YouTubeApiService {
     @GET("videos")
     suspend fun getVideoDetails(
         @Query("part") part: String = "snippet,contentDetails,statistics",
-        @Query("id") videoIds: String, // Comma-separated video IDs
+        @Query("id") videoIds: String, 
         @Query("key") apiKey: String
     ): Response<YouTubeVideoDetailsResponse>
 
@@ -55,7 +55,7 @@ interface YouTubeApiService {
     @GET("channels")
     suspend fun getChannelDetails(
         @Query("part") part: String = "snippet",
-        @Query("id") channelIds: String, // Comma-separated channel IDs
+        @Query("id") channelIds: String, 
         @Query("key") apiKey: String
     ): Response<YouTubeChannelResponse>
 }
