@@ -63,7 +63,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                // Optional: implement real-time search
                 return true
             }
         })
@@ -98,25 +97,21 @@ class MainActivity : AppCompatActivity() {
     private fun setupBottomNavigation() {
         binding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                // Handle navigation items
                 else -> true
             }
         }
     }
 
     private fun observeViewModel() {
-        // Observe videos
         viewModel.videos.observe(this) { videos ->
             videoAdapter.submitList(videos)
         }
 
-        // Observe loading state
         viewModel.isLoading.observe(this) { isLoading ->
             binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
             binding.swipeRefresh.isRefreshing = isLoading
         }
 
-        // Observe errors
         viewModel.error.observe(this) { error ->
             error?.let {
                 binding.tvError.apply {
@@ -132,7 +127,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Observe cached videos (for offline mode)
         viewModel.cachedVideos.observe(this) { cachedVideos ->
             if (cachedVideos.isNotEmpty() && videoAdapter.currentList.isEmpty()) {
                 videoAdapter.submitList(cachedVideos)

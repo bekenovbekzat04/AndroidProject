@@ -14,7 +14,9 @@ object MockDataGenerator {
                         "Coroutines, Retrofit, Room Database and MVVM architecture.",
                 thumbnailUrl = "https://picsum.photos/480/270?random=$index",
                 channelName = "Tech Channel ${(index % 5) + 1}",
+                channelId = "channel_${(index % 5) + 1}",
                 viewCount = "${(index * 1234)}K",
+                likeCount = "${(index * 123)}",
                 duration = "${(index % 10) + 5}:${(index % 60).toString().padStart(2, '0')}",
                 publishedAt = "${(index % 30) + 1} days ago",
                 channelThumbnail = "https://picsum.photos/100/100?random=${index + 100}",
@@ -22,6 +24,4 @@ object MockDataGenerator {
             )
         }
     }
-
-    fun getMockVideoResponse() = generateMockVideos()
 }

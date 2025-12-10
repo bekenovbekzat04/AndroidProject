@@ -8,7 +8,7 @@ import com.example.youtubeapp.data.model.Video
 
 @Database(
     entities = [Video::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

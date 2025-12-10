@@ -39,26 +39,22 @@ class VideoAdapter(
                 tvVideoInfo.text = "${video.viewCount} views • ${video.publishedAt}"
                 tvDuration.text = video.duration
 
-                // Load thumbnail
                 Glide.with(ivThumbnail.context)
                     .load(video.thumbnailUrl)
                     .placeholder(R.drawable.ic_placeholder)
                     .into(ivThumbnail)
 
-                // Load channel avatar
                 Glide.with(ivChannelAvatar.context)
                     .load(video.channelThumbnail)
                     .placeholder(R.drawable.ic_avatar_placeholder)
                     .circleCrop()
                     .into(ivChannelAvatar)
 
-                // Set favorite icon
                 btnFavorite.setImageResource(
                     if (video.isFavorite) R.drawable.ic_favorite_filled
                     else R.drawable.ic_favorite_border
                 )
 
-                // Click listeners
                 root.setOnClickListener { onVideoClick(video) }
                 btnFavorite.setOnClickListener { onFavoriteClick(video) }
             }

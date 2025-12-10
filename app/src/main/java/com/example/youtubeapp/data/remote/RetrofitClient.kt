@@ -8,7 +8,10 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
 
-    private const val BASE_URL = "https://api.mockapi.io/v1/"
+    private const val BASE_URL = "https://www.googleapis.com/youtube/v3/"
+
+
+    const val API_KEY = "AIzaSyDUDgK0nO-lMYf_xfZ1yDN8dQ8uDmpjifg"
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
@@ -29,3 +32,4 @@ object RetrofitClient {
 
     val apiService: YouTubeApiService = retrofit.create(YouTubeApiService::class.java)
 }
+
