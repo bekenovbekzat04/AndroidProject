@@ -101,7 +101,7 @@ data class VideoDetailsItem(
 
 data class ContentDetails(
     @SerializedName("duration")
-    val duration: String // ISO 8601 format: PT15M51S
+    val duration: String 
 )
 
 data class Statistics(
