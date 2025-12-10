@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         videoAdapter = VideoAdapter(
             onVideoClick = { video ->
-                // Handle video click - открыть детали видео
+                
                 Snackbar.make(
                     binding.root,
                     "Playing: ${video.title}",
@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
 
             addOnTabSelectedListener(object : com.google.android.material.tabs.TabLayout.OnTabSelectedListener {
                 override fun onTabSelected(tab: com.google.android.material.tabs.TabLayout.Tab?) {
-                    // Handle tab selection - load different categories
+                    
                     viewModel.loadTrendingVideos()
                 }
 
