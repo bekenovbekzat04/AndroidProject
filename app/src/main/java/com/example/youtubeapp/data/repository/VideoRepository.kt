@@ -34,7 +34,7 @@ class VideoRepository(
                 val lastSync = preferencesManager.lastSyncTime
                 val shouldFetch = forceRefresh ||
                         cachedVideos == 0 ||
-                        System.currentTimeMillis() - lastSync > 300000 // 5 min
+                        System.currentTimeMillis() - lastSync > 300000 
 
                 if (shouldFetch) {
                     val searchResponse = apiService.searchVideos(
