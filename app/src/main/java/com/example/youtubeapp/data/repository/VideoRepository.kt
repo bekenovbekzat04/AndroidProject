@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import com.example.youtubeapp.data.local.PreferencesManager
 import com.example.youtubeapp.data.local.VideoDao
 import com.example.youtubeapp.data.model.Video
-import com.example.youtubeapp.data.model.VideoResponse
 import com.example.youtubeapp.data.remote.YouTubeApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

@@ -10,6 +10,7 @@ import com.example.youtubeapp.data.local.PreferencesManager
 import com.example.youtubeapp.data.model.Video
 import com.example.youtubeapp.data.remote.RetrofitClient
 import com.example.youtubeapp.data.repository.VideoRepository
+import com.example.youtubeapp.util.MockDataGenerator
 import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
@@ -49,15 +50,18 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             _isLoading.value = true
             _error.value = null
 
-            val result = repository.fetchTrendingVideos(forceRefresh)
-
-            result.onSuccess { videoList ->
-                _videos.value = videoList
-                _isLoading.value = false
-            }.onFailure { exception ->
-                _error.value = exception.message ?: "Unknown error occurred"
-                _isLoading.value = false
-            }
+//            val result = repository.fetchTrendingVideos(forceRefresh)
+//
+//            result.onSuccess { videoList ->
+//                _videos.value = videoList
+//                _isLoading.value = false
+//            }.onFailure { exception ->
+//                _error.value = exception.message ?: "Unknown error occurred"
+//                _isLoading.value = false
+//            }
+            val mockVideos = MockDataGenerator.generateMockVideos(15)
+            _videos.value = mockVideos
+            _isLoading.value = false
         }
     }
 

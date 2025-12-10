@@ -18,27 +18,22 @@ class PreferencesManager(context: Context) {
         private const val KEY_IS_LOGGED_IN = "is_logged_in"
     }
 
-    // Theme settings
     var isDarkMode: Boolean
         get() = sharedPreferences.getBoolean(KEY_THEME_MODE, false)
         set(value) = sharedPreferences.edit().putBoolean(KEY_THEME_MODE, value).apply()
 
-    // Video quality preference
     var videoQuality: String
         get() = sharedPreferences.getString(KEY_VIDEO_QUALITY, "720p") ?: "720p"
         set(value) = sharedPreferences.edit().putString(KEY_VIDEO_QUALITY, value).apply()
 
-    // Autoplay setting
     var isAutoplayEnabled: Boolean
         get() = sharedPreferences.getBoolean(KEY_AUTOPLAY, true)
         set(value) = sharedPreferences.edit().putBoolean(KEY_AUTOPLAY, value).apply()
 
-    // Last sync timestamp
     var lastSyncTime: Long
         get() = sharedPreferences.getLong(KEY_LAST_SYNC, 0L)
         set(value) = sharedPreferences.edit().putLong(KEY_LAST_SYNC, value).apply()
 
-    // User data
     var username: String
         get() = sharedPreferences.getString(KEY_USERNAME, "") ?: ""
         set(value) = sharedPreferences.edit().putString(KEY_USERNAME, value).apply()
@@ -47,7 +42,6 @@ class PreferencesManager(context: Context) {
         get() = sharedPreferences.getBoolean(KEY_IS_LOGGED_IN, false)
         set(value) = sharedPreferences.edit().putBoolean(KEY_IS_LOGGED_IN, value).apply()
 
-    // Clear all preferences
     fun clearAll() {
         sharedPreferences.edit().clear().apply()
     }
